@@ -28,9 +28,8 @@ public class IntegerReporter {
         Collection<Integer> numbersGreaterThanFour = filter(numbers, new IsGreaterThanFour());
         Collection<Double> squareRoots = transform(numbersGreaterThanFour, new SquareRoot());
         Collection<Integer> squareRootsAsIntegers = transform(squareRoots, new ToInteger());
-        Collection<String> squareRootsAsStrings = transform(squareRootsAsIntegers, new ToString());
 
-        String result = Joiner.on(", ").join(squareRootsAsStrings);
+        String result = Joiner.on(", ").join(squareRootsAsIntegers);
 
         return result;
     }
