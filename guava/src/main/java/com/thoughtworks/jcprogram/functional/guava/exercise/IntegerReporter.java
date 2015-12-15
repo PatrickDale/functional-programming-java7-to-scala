@@ -2,10 +2,12 @@ package com.thoughtworks.jcprogram.functional.guava.exercise;
 
 import com.google.common.base.Function;
 import com.google.common.base.Joiner;
+import com.google.common.base.Predicate;
 
 import java.math.RoundingMode;
 import java.util.List;
 
+import static com.google.common.collect.Collections2.filter;
 import static com.google.common.collect.Lists.newArrayList;
 import static com.google.common.collect.Lists.transform;
 import static com.google.common.math.IntMath.sqrt;
@@ -23,16 +25,21 @@ public class IntegerReporter {
     }
 
     private static class SquareRootFunction implements Function<Integer, String> {
-
         public String apply(Integer numberToGetSquareRootOf) {
             return String.valueOf(sqrt(numberToGetSquareRootOf, RoundingMode.DOWN));
         }
+    }
 
+    private static class IsNotFourPredicate implements Predicate<Integer> {
+        public boolean apply(Integer integer) {
+            return integer != 4;
+        }
     }
 
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
-        List<String> squareRoots = transform(numbers, new SquareRootFunction());
-        return Joiner.on("").join(squareRoots);
+        List<Integer> nonFourNumbers = newArrayList(filter(numbers, new IsNotFourPredicate()));
+        List<String> squareRoots = transform(nonFourNumbers, new SquareRootFunction());
+        return Joiner.on(", ").join(squareRoots);
     }
 
 }
