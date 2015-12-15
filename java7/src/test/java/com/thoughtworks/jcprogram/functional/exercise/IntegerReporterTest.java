@@ -43,7 +43,6 @@ public class IntegerReporterTest {
         assertThat(result, is("3, 3"));
     }
 
-    @Ignore
     @Test
     public void shouldReportNothingWhenNumberIs4() {
         numbers.add(4);

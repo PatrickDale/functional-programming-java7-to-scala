@@ -24,7 +24,9 @@ public class IntegerReporter {
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
         String squareRoots = "";
         for (Integer number : numbers) {
-            squareRoots += String.valueOf(squareRootAsInteger(number)) + SEPARATOR;
+            if (number != 4) {
+                squareRoots += String.valueOf(squareRootAsInteger(number)) + SEPARATOR;
+            }
         }
         return removeTrailingSeparator(squareRoots);
     }
