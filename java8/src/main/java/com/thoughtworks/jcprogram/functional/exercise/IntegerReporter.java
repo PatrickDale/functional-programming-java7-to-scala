@@ -23,6 +23,7 @@ public class IntegerReporter {
 
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
         return numbers.stream()
+                .filter(i -> i != 4)
                 .map(Math::sqrt)
                 .map(Double::intValue)
                 .map(String::valueOf)
