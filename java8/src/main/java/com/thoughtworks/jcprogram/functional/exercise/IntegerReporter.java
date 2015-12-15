@@ -11,6 +11,9 @@ import static java.util.Arrays.asList;
 // For example, "3, 4"
 
 public class IntegerReporter {
+
+    public static final String DELIMITER = ", ";
+
     public static void main(String[] args) {
         List<Integer> numbers = asList(1, 9, 4, 16, 4);
 
@@ -23,7 +26,7 @@ public class IntegerReporter {
                 .map(Math::sqrt)
                 .map(Double::intValue)
                 .map(String::valueOf)
-                .collect(Collectors.joining(""));
+                .collect(Collectors.joining(DELIMITER));
     }
 
 }
