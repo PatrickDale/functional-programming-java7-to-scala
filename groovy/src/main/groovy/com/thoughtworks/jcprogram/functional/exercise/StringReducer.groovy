@@ -11,5 +11,7 @@ println new StringReducer().reduceToFirstLetterOfLengthFourStrings(strings)
 
 
 def reduceToFirstLetterOfLengthFourStrings(strings){
-    ""
+    return strings.findAll {it.size() == 4 }
+            .collect {it[0]}
+            .join("")
 }
