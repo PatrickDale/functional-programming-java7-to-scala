@@ -3,6 +3,7 @@ package com.thoughtworks.jcprogram.functional.exercise;
 import java.util.List;
 
 import static java.util.Arrays.asList;
+import static java.util.Arrays.spliterator;
 
 // Given a list of numbers like {1, 9, 4, 16, 4}
 // Print the square root of all of the numbers larger than 4.
@@ -18,7 +19,11 @@ public class IntegerReporter {
     }
 
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
-        return "";
+        String squareRoots = "";
+        for (Integer number : numbers) {
+            squareRoots += String.valueOf(Math.sqrt(number));
+        }
+        return squareRoots;
     }
 
 }
