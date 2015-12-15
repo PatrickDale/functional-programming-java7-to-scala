@@ -33,7 +33,6 @@ public class IntegerReporterTest {
         assertThat(result, both(containsString("3")).and(containsString("4")));
     }
 
-    @Ignore
     @Test
     public void shouldSeparateNumbersWithCommaAndSpace() {
         numbers.add(9);
