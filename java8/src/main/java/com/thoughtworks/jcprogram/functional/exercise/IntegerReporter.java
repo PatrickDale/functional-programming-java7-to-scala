@@ -2,6 +2,7 @@ package com.thoughtworks.jcprogram.functional.exercise;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
@@ -22,8 +23,10 @@ public class IntegerReporter {
     }
 
     public String reportSquareRootsOfLargeNumbers(List<Integer> numbers) {
+        Predicate<Integer> isNot4 = i -> i != 4;
+
         return numbers.stream()
-                .filter(i -> i != 4)
+                .filter(isNot4)
                 .map(Math::sqrt)
                 .map(Double::intValue)
                 .map(String::valueOf)
