@@ -21,7 +21,6 @@ public class IntegerReporterTest {
         integerReporter = new IntegerReporter();
     }
 
-    @Ignore
     @Test
     public void shouldTakeSquareRootOfAllNumbers() {
         numbers.add(9);
