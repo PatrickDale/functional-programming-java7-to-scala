@@ -28,7 +28,7 @@ public class IntegerReporterTest {
 
         String result = integerReporter.reportSquareRootsOfLargeNumbers(numbers);
 
-        assertThat(result, both(containsString("1")).and(containsString("4")));
+        assertThat(result, both(containsString("3")).and(containsString("4")));
     }
 
     @Test
